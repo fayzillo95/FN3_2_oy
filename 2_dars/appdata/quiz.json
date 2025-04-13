@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "question": "What is JavaScript?",
+        "options": {
+            "A": "Language",
+            "B": "Framework",
+            "C": "Library"
+        },
+        "answer": "A"
+    },
+    {
+        "id": 2,
+        "question": "What is Node.js?",
+        "options": {
+            "A": "Runtime",
+            "B": "IDE",
+            "C": "Database"
+        },
+        "answer": "A"
+    }
+]
