@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "purpase": "Biznes",
+        "amout": 2500
+    },
+    {
+        "id": 2,
+        "purpase": "Test",
+        "amout": 5000
+    },
+    {
+        "id": 3,
+        "amout": 5000,
+        "purpase": "Test"
+    },
+    {
+        "id": 4,
+        "amout": 1200,
+        "purpase": "testOmadbek"
+    }
+]
