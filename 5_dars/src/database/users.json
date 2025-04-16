@@ -1,0 +1,126 @@
+[
+    {
+        "name": "Ali",
+        "age": 25,
+        "gender": "male",
+        "id": 1,
+        "posts": []
+    },
+    {
+        "name": "Vali",
+        "age": 30,
+        "gender": "male",
+        "id": 2,
+        "posts": [
+            {
+                "title": "Vali's news",
+                "body": "Today I learned JS.",
+                "id": 2
+            }
+        ]
+    },
+    {
+        "name": "Malika",
+        "age": 22,
+        "gender": "female",
+        "id": 3,
+        "posts": [
+            {
+                "title": "Malika's thoughts",
+                "body": "React is fun!",
+                "id": 3
+            }
+        ]
+    },
+    {
+        "name": "Sardor",
+        "age": 28,
+        "gender": "male",
+        "id": 4,
+        "posts": [
+            {
+                "title": "Sardor's idea",
+                "body": "I want to build an app.",
+                "id": 4
+            }
+        ]
+    },
+    {
+        "name": "Dilnoza",
+        "age": 24,
+        "gender": "female",
+        "id": 5,
+        "posts": [
+            {
+                "title": "Dilnoza says",
+                "body": "Node.js is powerful.",
+                "id": 5
+            }
+        ]
+    },
+    {
+        "name": "Shahzod",
+        "age": 26,
+        "gender": "male",
+        "id": 6,
+        "posts": [
+            {
+                "title": "Shahzod speaks",
+                "body": "Learning backend.",
+                "id": 6
+            }
+        ]
+    },
+    {
+        "name": "Aziza",
+        "age": 29,
+        "gender": "female",
+        "id": 7,
+        "posts": [
+            {
+                "title": "Aziza's article",
+                "body": "Design is everything.",
+                "id": 7
+            }
+        ]
+    },
+    {
+        "name": "Bekzod",
+        "age": 21,
+        "gender": "male",
+        "id": 8,
+        "posts": [
+            {
+                "title": "Bekzod's blog",
+                "body": "Frontend vs Backend.",
+                "id": 8
+            }
+        ]
+    },
+    {
+        "name": "Lola",
+        "age": 23,
+        "gender": "female",
+        "id": 9,
+        "posts": [
+            {
+                "title": "Lola's post",
+                "body": "CSS tricks are amazing.",
+                "id": 9
+            }
+        ]
+    },
+    {
+        "name": "Javohir",
+        "age": 27,
+        "gender": "male",
+        "id": 10,
+        "posts": [
+            {
+                "title": "Javohir's journal",
+                "body": "Python or JS?",
+                "id": 10
+            }
+        ]
+    }
+]
