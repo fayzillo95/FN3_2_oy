@@ -1,4 +1,14 @@
-import { IsAlpha, IsAlphanumeric, IsOptional, IsString, Max, MaxLength,  Min, MinLength } from "class-validator";
+import { 
+    IsAlpha, 
+    IsAlphanumeric, 
+    IsOptional, 
+    IsString, 
+    Max, 
+    MaxLength,  
+    Min, 
+    MinLength 
+} from "class-validator";
+
 import { IsNumber } from "class-validator";
 
 export class CreateUserDto {
@@ -13,7 +23,7 @@ export class CreateUserDto {
     @Min(1,{message : "Age minimal 1 bo'lishi kerak!"})
     @Max(101,{message : "Age maximal 101 bo'lishi kerak !"})
     age: number
-
+// test
     @IsString()
     @IsAlpha(undefined, { message: "Ism faqat harflardan tashkil topgan bo'lishi kerak !" })
     @MinLength(3, {message : "Ism minimal 3 ta harfdan tashkil topgan bo'lishi kerak !"})

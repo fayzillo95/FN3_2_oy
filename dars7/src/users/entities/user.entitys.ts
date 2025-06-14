@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import { AllowNull, Column, DataType, HasMany, Model, Table } from "sequelize-typescript";
-import { Posts } from "./posts.model";
+import { Posts } from "../../posts/entities/posts.entitys";
 
 @Table({tableName : "users", timestamps : false})
 export class User extends Model{
