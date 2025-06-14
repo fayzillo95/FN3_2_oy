@@ -18,9 +18,8 @@ export class UsersService {
     this.models = {userModel : user ,postsModel : posts}
   }
 
-  async create(createUserDto: CreateUserDto) {
+  async create(createUserDto: Omit<CreateUserDto, "id">) {
     const exists =  await this.models.userModel.create(createUserDto)
-    
     return 'This action adds a new user';
   }
 
