@@ -1,1 +1,6 @@
-# FN3_2_oy
+# FN3_4_oy
+
+# Author 
+  - Fayzullo Ummatov
+  - ☎️  +998 91 610 21 41
+  - ![alt text](telegram.svg)
