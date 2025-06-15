@@ -10,9 +10,9 @@ import { Module } from '@nestjs/common';
         dialect: 'postgres',
         host: 'localhost',
         port: 5432,
-        username: 'postgres',
+        username: 'fayzullo',
         password: '12345678',
-        database: 'nest',
+        database: 'dars7',
         models : [User,Posts],
         autoLoadModels : true,
         synchronize : true

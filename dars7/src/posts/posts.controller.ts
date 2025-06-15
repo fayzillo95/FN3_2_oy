@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, BadRequestException } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
@@ -7,28 +7,34 @@ import { UpdatePostDto } from './dto/update-post.dto';
 export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
-  @Post()
-  create(@Body() createPostDto: CreatePostDto) {
-    return this.postsService.create(createPostDto);
+  @Post("v1/create/:userId")
+  create(@Body() createPostDto: CreatePostDto, @Param("userId") userId : string) : ReturnType<PostsService["create"]> {
+    return this.postsService.create(createPostDto,+userId);
   }
 
   @Get()
-  findAll() {
+  findAll() : ReturnType<PostsService["findAll"]>{
     return this.postsService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: string) : ReturnType<PostsService["findOne"]>{
+    if(isNaN(+id)) throw new BadRequestException("Invalid id !")
     return this.postsService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) {
+  @Patch('v2/patch/:id')
+  update(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) : ReturnType<PostsService["update"]> {
+    if(isNaN(+id)) throw new BadRequestException("Invalid id !")
+    if(!updatePostDto || Object.values(updatePostDto).length === 0){
+      throw new BadRequestException("Invalid body epty or undefined !")
+    }
     return this.postsService.update(+id, updatePostDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
+  @Delete('v3/remove/:id')
+  remove(@Param('id') id: string) :ReturnType<PostsService["remove"]>{
+    if(isNaN(+id)) throw new BadRequestException("Invalid id is missing number !")
     return this.postsService.remove(+id);
   }
 }
