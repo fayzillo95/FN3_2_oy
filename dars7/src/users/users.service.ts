@@ -4,6 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from 'src/users/entities/user.entitys';
 import { Posts } from 'src/posts/entities/posts.entitys';
 import {InjectModel} from "@nestjs/sequelize"
+import { plainToInstance } from 'class-transformer';
 
 @Injectable()
 export class UsersService {
@@ -18,9 +19,10 @@ export class UsersService {
     this.models = {userModel : user ,postsModel : posts}
   }
 
-  async create(createUserDto: Omit<CreateUserDto, "id">) {
-    const exists =  await this.models.userModel.create(createUserDto)
-    return 'This action adds a new user';
+  async create(createUserDto: CreateUserDto) {
+    const exists =  await this.models.userModel.create({createUserDto})
+    const dto = plainToInstance(User,exists.toJSON())
+    return dto;
   }
 
   findAll() {
