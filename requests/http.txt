@@ -2,26 +2,26 @@
 curl -X POST http://localhost:3000/api/auth/v1/register \
     -H "Content-Type: application/json" \
     -d '{"username" : "fayzillo", "password" : "I/*23cdw456Aojjds78"}' \
-    -o user_resgiter.json
+    -o ./response/user_resgiter.json
 
 curl -X POST http://localhost:3000/api/auth/v2/login \
     -H "Content-Type: application/json" \
     -d '{"username" : "fayzillo", "password" : "I/*23cdw456Aojjds78"}' \
-    -o user_login.json
+    -o ./response/user_login.json
 
 curl -X GET http://localhost:3000/api/users/v6/getall \
-    -o getallUsers.json
+    -o ./response/getallUsers.json
 
 
 curl -X GET http://localhost:3000/api/users/v5/1 \
-    -o gat_one_user.json
+    -o ./response/get_one_user.json
 
 curl -X PATCH http://localhost:3000/api/users/v3/1 \
     -H "Content-Type: application/json" \
     -d '{"username" : "UpdatedUser", "password" : "12345"}' \
-    -o user_update.json
+    -o ./response/user_update.json
 
 curl -X DELETE http://localhost:3000/api/users/v4/1 \
-    -o user_delete.json
+    -o ./response/user_delete.json
 
 
