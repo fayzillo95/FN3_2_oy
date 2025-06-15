@@ -25,8 +25,10 @@ export class UsersService {
     return dto;
   }
 
-  findAll() {
-    return `This action returns all users`;
+  async findAll() : Promise<User[]> {
+    const result = await this.models.userModel.findAll()
+    const dto = result.map(user => plainToInstance(User,user.toJSON()))
+    return dto;
   }
 
   findOne(id: number) {
