@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "body": "Birinchi Post update",
+        "userId": null,
+        "createdAt": "2025-06-15T13:54:02.947Z",
+        "updatedAt": "2025-06-15T14:01:00.619Z"
+    },
+    {
+        "id": 2,
+        "body": "Birinchi Post",
+        "userId": 1,
+        "createdAt": "2025-06-15T13:54:42.064Z",
+        "updatedAt": "2025-06-15T13:54:42.064Z"
+    },
+    {
+        "id": 3,
+        "body": "Birinchi Post",
+        "userId": 1,
+        "createdAt": "2025-06-15T14:01:57.815Z",
+        "updatedAt": "2025-06-15T14:01:57.815Z"
+    }
+]
