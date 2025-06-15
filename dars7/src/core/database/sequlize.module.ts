@@ -11,7 +11,7 @@ import { Module } from '@nestjs/common';
         host: 'localhost',
         port: 5432,
         username: 'postgres',
-        password: 'password',
+        password: '12345678',
         database: 'nest',
         models : [User,Posts],
         autoLoadModels : true,
