@@ -1,7 +1,1 @@
-{
-    "message": [
-        "an unknown value was passed to the validate function"
-    ],
-    "error": "Bad Request",
-    "statusCode": 400
-}
+{"message":["an unknown value was passed to the validate function"],"error":"Bad Request","statusCode":400}

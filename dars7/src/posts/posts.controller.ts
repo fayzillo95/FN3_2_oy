@@ -8,7 +8,7 @@ export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
   @Post("v1/create/:userId")
-  create(@Body() createPostDto: CreatePostDto, @Param("userId") userId : string) : ReturnType<PostsService["create"]> {
+  create(@Body() createPostDto: {body : string}, @Param("userId") userId : string) : ReturnType<PostsService["create"]> {
     return this.postsService.create(createPostDto,+userId);
   }
 
