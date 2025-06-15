@@ -5,22 +5,26 @@ import { Posts } from "../../posts/entities/posts.entitys";
 @Table({tableName : "users", timestamps : false})
 export class User extends Model{
     @Column({
-        type : DataType.STRING,
-        unique : true
+        type : DataType.STRING
     })
-    username : string
+    declare username : string
     @Column({
         type : DataTypes.STRING,
     })
-    full_name : string
+    declare first_name : string
+ 
+    @Column({
+        type :DataTypes.STRING
+    })
+    declare last_name : string
 
     @Column({
         type : DataTypes.INTEGER,
         allowNull : true,
         defaultValue : 1
     })
-    age : number
-    
+    declare age : number
+
     @HasMany(() => Posts)
-    posts : Posts
+    posts : Posts[]
 }

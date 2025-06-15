@@ -25,10 +25,12 @@ export class PostsService {
   }
 
   async create(createPostDto: CreatePostDto, userId: number): Promise<{ message: string, newPost: Posts }> {
+    console.log(createPostDto)
     const existsUser = await this.db.userMOdel.findOne({ where: { id: userId } })
     if (!existsUser) throw new NotFoundException("User not found !")
     try {
-      const result = await this.db.postsModel.create({ userId, ...createPostDto })
+      console.log({data :{ userId, ...createPostDto }})
+      const result = await this.db.postsModel.create({ userId : userId, body : createPostDto.body })
       const dto = plainToInstance(Posts, result.toJSON())
       if (result) {
         return {
@@ -46,7 +48,7 @@ export class PostsService {
 
   async findAll(): Promise<Posts[]> {
     try {
-      const result = await this.db.postsModel.findAll()
+      const result = await this.db.postsModel.findAll({order :[['id' ,'asc']]})
       const dto = result.map(resurs => plainToInstance(Posts, resurs.toJSON()))
       return dto;
     } catch (error) {
@@ -100,5 +102,11 @@ export class PostsService {
       const stack = "src/posts/posts.service.ts:XX" // real qator raqami
       throw new HttpException(ErrorHandlers.getErrorExeption(error, stack), 500)
     }
+  }
+  async removeByUserId(id : number){
+    const existsCount = await this.db.postsModel.findAndCountAll({where : {userId : id},limit : 1})
+    if(existsCount.count === 0) throw new NotFoundException("Posts not found !")
+    const destroyPosts = await this.db.postsModel.destroy({where : {userId : id}})
+    return {message : `Posts deleted ${existsCount} posts`}
   }
 }

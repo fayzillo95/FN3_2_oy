@@ -7,15 +7,15 @@ export class Posts extends Model{
     @Column({
         type : DataType.STRING,
     })
-    body : string
+    declare body : string
 
     @ForeignKey(() => User)
     @Column({
         type :DataType.INTEGER
     })
-    userId : User
+    declare userId : number
 
     @BelongsTo(() => User)
-    user : User[]
+    declare user : User[]
 
 }

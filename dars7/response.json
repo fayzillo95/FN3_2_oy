@@ -1,1 +1,22 @@
-{"message":["an unknown value was passed to the validate function"],"error":"Bad Request","statusCode":400}
+curl -X POST http://localhost:3000/api/users/v1/register \
+    -H "Content-Type: application/json" \
+    -d '{"username" : "fayzillo1", "first_name" : "Fayzillo" , "last_name" : "Ummatov"}' \
+    -o response.json
+
+curl -X GET http://localhost:3000/api/users/v4/getall \
+     -o response.json
+
+curl -X GET http://localhost:3000/api/posts \
+     -o response.json
+
+
+curl -X POST http://localhost:3000/api/posts/v1/create/1 \
+    -H "Content-Type: application/json" \
+    -d '{"body" : "Birinchi Post"}' \
+    -o response.json  
+
+
+curl -X PATCH http://localhost:3000/api/posts/v2/update/1 \
+    -H "Content-Type: application/json" \
+    -d '{"body" : "Birinchi Post update"}' \
+    -o response.json  
